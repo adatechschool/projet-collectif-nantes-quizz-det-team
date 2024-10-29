@@ -1,36 +1,86 @@
 import {quiz_nourriture_francaise} from "./questions.js"; 
 
 const questionBox = document.querySelector(".question")
+const answersBox = document.querySelector('.options')
+const nextButton = document.querySelector("#next-button")
+const replayButton = document.querySelector("#replay-button")
 
-const answersBox = [document.querySelector("#firstButton"), document.querySelector("#secondButton"), document.querySelector("#thirdButton"), document.querySelector("#fourthButton")]
+let currentQuestionIndex = 0
+
+let reponseDuJoueur = 0
+let score = 0
+
+function loadQuestion() {
+    answersBox.innerHTML = ''
+    reponseDuJoueur = 0
+    
+    const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
+  
+    questionBox.innerText = currentQuestion.text
+  
+    currentQuestion.options.forEach(option => {
+        const button = document.createElement('button')
+        button.innerText = option
+        button.classList.add('answer')
+        button.addEventListener('click',()=>{
+            if(reponseDuJoueur==0){
+                reponseDuJoueur = option
+                if(checkAnswer()){
+                    button.style.borderColor = 'green'
+                }
+                else{
+                    button.style.borderColor = 'red'
+                }
+            }
+        })
+        answersBox.appendChild(button)
+    })
+  }
+
+nextButton.addEventListener('click', ()=>{
+    if(reponseDuJoueur!=0){
+        currentQuestionIndex ++ 
+        if(currentQuestionIndex<quiz_nourriture_francaise.questions.length){
+            loadQuestion()
+        }
+        else{
+            
+            if(score==5){
+                questionBox.innerText = "Bravo tu connais la culture française. " + score + "/5"
+            }
+            else if(score<=2){
+                questionBox.innerText = "Tu as des lacunes en culture française mais continue tes efforts. " + score + "/5"
+            }
+            else{
+                questionBox.innerText = "Bravo tu as un score de " + score + "/5"
+            }
+            answersBox.style.display = "none"
+            nextButton.style.display = "none"
+            replayButton.style.display = "inline-block"
+        }
+    }
+})
 
 
-const firstQuestion = quiz_nourriture_francaise.questions[0];
+replayButton.addEventListener('click', () =>{
+    currentQuestionIndex = 0
+    score = 0
+    answersBox.style.display = "inline-block"
+    nextButton.style.display = "inline-block"
+    replayButton.style.display = "none"
+    loadQuestion()
+})
 
-console.log(firstQuestion)
+function checkAnswer(){
+    if(quiz_nourriture_francaise.questions[currentQuestionIndex].correct_answer==reponseDuJoueur){
+        console.log("bonne réponse")
+        score +=1
+        return true
+    }
+    else{
+        console.log("mauvaise réponse")
+        return false
+    }
+}
 
-questionBox.innerText = firstQuestion.text
-
-const reponse1 = firstQuestion.options[0]
-
-answersBox[0].innerText = reponse1
-
-firstQuestion.options.forEach(option => {
-    const reponse1 = firstQuestion.options[option]
-    answersBox[option].innerText
-});
-
-
-
-
-
-
-
-
-
-
-
-// const questionText = quiz_nourriture_francaise.questions[1]
-
-// questionBox.innerText = questionText
-
+loadQuestion()

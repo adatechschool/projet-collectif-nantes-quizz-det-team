@@ -14,17 +14,17 @@ questions:
     },
     {
         text: "D'ou vient le beurre salé ?",
-        options: ["la tête d'un illuminé breton", "de régions qui souhaitaient concerver le beurre plus longtemps", "de Clermont-Ferrant", "de vaches gavées au sel"],
+        options: ["de la tête d'un illuminé breton", "de régions qui souhaitaient concerver le beurre plus longtemps", "de Clermont-Ferrant", "de vaches gavées au sel"],
         correct_answer: "de régions qui souhaitaient concerver le beurre plus longtemps"
     },
     {
         text: "Laquelle de ces patisseries n'utilise pas d'alcool dans sa préparation ?",
-        options: ["le gâteau nantais", "le baba au rhum", "kouign-amann", "le tiramisu"],
-        correct_answer: "kouign-amann"
+        options: ["le gâteau nantais", "le baba au rhum", "le kouign-amann", "le tiramisu"],
+        correct_answer: "le kouign-amann"
     },
     {
         text: "Laquelle des suggestions suivantes à la bonne orthographe ?",
-        options: ["cou ya-man", "kouign-amann", "queen hamam", "cuign-amann"],
+        options: ["coun ya-man", "kouign-amann", "queen hamam", "cuign-amann"],
         correct_answer: "kouign-amann"
     },
     
