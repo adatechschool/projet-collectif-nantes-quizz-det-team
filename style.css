@@ -4,19 +4,6 @@ body {
     
 }
 
-.options>*{
-    background-color: rgb(255, 255, 255);
-    height: 30px;
-    width: 500px;
-    border-radius: 15px;
-    border:solid;
-    border-color: #ffffff;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-    font-family: "Gill Sans", sans-serif;
-    color: #2c5364;
-}
-
 .question {
     color: #2c5364;
     background-color: rgb(255, 255, 255);
