@@ -14,9 +14,9 @@ let score = 0
 function loadQuestion() {
     answersBox.innerHTML = ''
     reponseDuJoueur = 0
-    
+
     const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
-  
+
     questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
   
     questionBox.innerText = currentQuestion.text
@@ -40,7 +40,7 @@ function loadQuestion() {
         //// Ajouter le bouton à la boîte de réponses
         answersBox.appendChild(button)
     })
-  }
+}
 
 nextButton.addEventListener('click', ()=>{
     if(reponseDuJoueur!=0){
