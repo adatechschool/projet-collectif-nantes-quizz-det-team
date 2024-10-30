@@ -4,6 +4,7 @@ const questionBox = document.querySelector(".question")
 const answersBox = document.querySelector('.options')
 const nextButton = document.querySelector("#next-button")
 const replayButton = document.querySelector("#replay-button")
+const progressBar = document.querySelector("progress")
 
 let currentQuestionIndex = 0
 
@@ -40,6 +41,7 @@ function loadQuestion() {
 nextButton.addEventListener('click', ()=>{
     if(reponseDuJoueur!=0){
         currentQuestionIndex ++ 
+        progressBar.value += 1
         if(currentQuestionIndex<quiz_nourriture_francaise.questions.length){
             loadQuestion()
         }
