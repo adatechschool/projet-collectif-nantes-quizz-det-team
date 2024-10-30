@@ -1,6 +1,6 @@
 body {
     background: linear-gradient( to right, rgb(2, 30, 66), rgb(255, 255, 255), rgb(200, 16, 46) );
-    text-align: center;
+    display: flex;
     
 }
 
@@ -63,5 +63,7 @@ body {
     letter-spacing: 0.5px;
     font-family: "Gill Sans", sans-serif;
     color: #ffffff;
+    justify-content: center;
+    align-self: flex-end;
 }
 
