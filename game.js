@@ -67,6 +67,7 @@ nextButton.addEventListener('click', ()=>{
 replayButton.addEventListener('click', () =>{
     currentQuestionIndex = 0
     score = 0
+    progressBar.value = 0
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
     replayButton.style.display = "none"
