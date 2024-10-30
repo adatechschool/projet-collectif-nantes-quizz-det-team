@@ -47,6 +47,44 @@ body {
     color: #2c5364;
 }
 
+#question-image {
+    height: 300px;
+    width: 300px;
+    border: solid;
+    border-radius: 15px;
+    border-color: #2c5364;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.options{
+    display: flex;
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    height: 150px;
+    width: 500px;
+    border: solid;
+    border-radius: 15px;
+    border-color: #2c5364;
+    justify-content: center;
+    align-self: flex-end;
+}
+
+.options>*{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 500px;
+    border-radius: 15px;
+    border:solid;
+    border-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    font-family: "Gill Sans", sans-serif;
+    color: #2c5364;
+    justify-content: center;
+    align-self: flex-end;
+}
+
 .button-container>* { 
     background-color: #2c5364;
     height: 25px;

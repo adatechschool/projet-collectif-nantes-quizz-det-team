@@ -5,6 +5,7 @@ const answersBox = document.querySelector('.options')
 const nextButton = document.querySelector("#next-button")
 const replayButton = document.querySelector("#replay-button")
 const questionImage = document.querySelector("#question-image")
+const questionImage = document.querySelector("#question-image")
 const progressBar = document.querySelector("progress")
 
 let currentQuestionIndex = 0
@@ -17,6 +18,8 @@ function loadQuestion() {
     reponseDuJoueur = 0
 
     const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
+  
+    questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
 
     questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
   
@@ -64,6 +67,7 @@ nextButton.addEventListener('click', ()=>{
             answersBox.style.display = "none"
             nextButton.style.display = "none"
             questionImage.style.display = "none"
+            questionImage.style.display = "none"
             replayButton.style.display = "inline-block"
         }
     }
@@ -76,6 +80,7 @@ replayButton.addEventListener('click', () =>{
     progressBar.value = 0
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
+    questionImage.style.display = "inline-block"
     questionImage.style.display = "inline-block"
     replayButton.style.display = "none"
     loadQuestion()
