@@ -5,7 +5,6 @@ const answersBox = document.querySelector('.options')
 const nextButton = document.querySelector("#next-button")
 const replayButton = document.querySelector("#replay-button")
 const questionImage = document.querySelector("#question-image")
-const questionImage = document.querySelector("#question-image")
 const progressBar = document.querySelector("progress")
 
 let currentQuestionIndex = 0
@@ -18,8 +17,6 @@ function loadQuestion() {
     reponseDuJoueur = 0
 
     const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
-  
-    questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
 
     questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
   
