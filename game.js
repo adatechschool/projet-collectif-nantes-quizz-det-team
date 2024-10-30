@@ -17,12 +17,13 @@ function loadQuestion() {
     const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
   
     questionBox.innerText = currentQuestion.text
-  
+     //currentQuestion crée 4 bouttons
     currentQuestion.options.forEach(option => {
         const button = document.createElement('button')
         button.innerText = option
         button.classList.add('answer')
         button.addEventListener('click',()=>{
+            // si le reponse du joueur=0
             if(reponseDuJoueur==0){
                 reponseDuJoueur = option
                 if(checkAnswer()){
@@ -33,6 +34,7 @@ function loadQuestion() {
                 }
             }
         })
+        //// Ajouter le bouton à la boîte de réponses
         answersBox.appendChild(button)
     })
   }
