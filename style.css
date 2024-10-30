@@ -1,7 +1,6 @@
 body {
     background: linear-gradient( to right, rgb(2, 30, 66), rgb(255, 255, 255), rgb(200, 16, 46) );
-    display: flex;
-    
+    text-align: center;
 }
 
 .question {
@@ -13,7 +12,7 @@ body {
     letter-spacing: 0.5px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     font-family: "Gill Sans", sans-serif;
-  }
+}
 
 #question-image {
     height: 300px;
@@ -25,7 +24,6 @@ body {
 }
 
 .options{
-    display: flex;
     background-color: rgb(255, 255, 255);
     padding: 15px;
     height: 150px;
@@ -33,8 +31,6 @@ body {
     border: solid;
     border-radius: 15px;
     border-color: #2c5364;
-    justify-content: center;
-    align-self: flex-end;
 }
 
 .options>*{
@@ -49,8 +45,6 @@ body {
     letter-spacing: 0.5px;
     font-family: "Gill Sans", sans-serif;
     color: #2c5364;
-    justify-content: center;
-    align-self: flex-end;
 }
 
 .button-container>* { 
@@ -63,7 +57,5 @@ body {
     letter-spacing: 0.5px;
     font-family: "Gill Sans", sans-serif;
     color: #ffffff;
-    justify-content: center;
-    align-self: flex-end;
 }
 
