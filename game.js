@@ -46,13 +46,13 @@ nextButton.addEventListener('click', ()=>{
         else{
             
             if(score==5){
-                questionBox.innerText = "Bravo tu connais la culture française. " + score + "/5"
+                questionBox.innerText = "Bravo, tu connais la culture française. " + score + "/5"
             }
             else if(score<=2){
                 questionBox.innerText = "Tu as des lacunes en culture française mais continue tes efforts. " + score + "/5"
             }
             else{
-                questionBox.innerText = "Bravo tu as un score de " + score + "/5"
+                questionBox.innerText = "Bravo, tu as un score de " + score + "/5"
             }
             answersBox.style.display = "none"
             nextButton.style.display = "none"
