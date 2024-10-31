@@ -36,7 +36,9 @@ function loadQuiz(quizName){
     progressBar.value = 0
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
+    questionImage.style.display = "inline-block" 
     replayButton.style.display = "none"
+    timerElement.style.display = "block"
     if(quizName=="Alsace"){
         currentQuiz = quiz_nourriture_francaise.Alsace
     }

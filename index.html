@@ -4,30 +4,38 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>projet-collectif-nantes-quizz-det-team</title>
-    <link defer rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <script defer src="questions.js" type="module"></script>
     <script defer src="game.js" type="module"></script>
 </head>
 <body>
+	<!-- Section pour le choix des themes -->
 	<div class="menu"></div>
+	<!-- Section pour le quiz -->
 	<div id="quiz-container">
 		<!-- Section pour la question -->
 		<div class="question"></div><br/>
 		<!-- Section pour les images -->
-		<img id="question-image" src="./images/image1.jpg" alt="Question image"><br/>
+		<img id="question-image" src="./images/image1.jpg" alt="Question image"/><br/>
 		<!-- Section pour les options -->
 		<br/><div class="options"></div>
-		<!-- Prévois déjà le design du bouton "suivant" pour passer à la prochaine question -->
+		<!-- Section pour les bouttons suivant et rejouer -->
 		<div class="button-container"><br/>
-		  <button id="next-button">Suivant</button>
-		  <button id="replay-button" style="display: none;">Rejouer</button>
+			<!-- Bouton suivant -->
+			<button id="next-button">Suivant</button>
+			<!-- Bouton Rejouer -->
+			<button id="replay-button" style="display: none;">Rejouer</button>
 		</div>
-	  <div id="timer">30</div>
+		<!-- Section pour le chrono -->
+		<div id="timer">30</div>
+		<!-- Section pour la barre de progression -->
 		<progress max="5" value="0"></progress>
 	</div>
+	<!-- Section pour les liens des autres groupes -->
 	<div class="foot">
 		<nav class="link">
 			<ol>
+				<!-- les liens -->
 				<li class="link"><a href="https://charlene-44.github.io" target="_blank" rel="noopener noreferrer">groupe 1</a></li>
 				<li class="link"><a href="#">groupe 2</a></li>
 				<li class="link"><a href="#">groupe 3</a></li>
