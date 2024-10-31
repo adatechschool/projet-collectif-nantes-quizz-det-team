@@ -75,3 +75,10 @@ body {
     transform: translate(0, 5px);
 }
 
+.link ol{
+    display:flex;
+    list-style-type: none;
+    padding-left: 0;
+    justify-content: center;
+}
+
