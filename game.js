@@ -59,8 +59,6 @@ function loadQuestion() {
         answersBox.appendChild(button)
         
     })
-
-  }
   const interval = setInterval (decrementerTemps, 1000)
 }
 
