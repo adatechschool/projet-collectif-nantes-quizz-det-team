@@ -1,6 +1,6 @@
 export const quiz_nourriture_francaise= 
 {
-questionsDET: 
+DET: 
 [
     {
         text: "Comment s'appellent les bonbons spécialités de Cambrai ?",
@@ -34,7 +34,7 @@ questionsDET:
     },
     
 ],
-questionsAlsace:
+Alsace:
 [
     {
         text: "Quel plat traditionnel alsacien est composé de chou fermenté, de viandes et de pommes de terre ?",
@@ -62,7 +62,7 @@ questionsAlsace:
         correct_answer: "Le munster"
     }
 ],
-questionsSucre:
+Sucre:
 [
     {
         text: "Comment s'appelle la confiserie originaire de Cambrai, faite de menthe et de sucre ?",

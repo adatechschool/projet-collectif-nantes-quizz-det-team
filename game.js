@@ -6,7 +6,7 @@ const nextButton = document.querySelector("#next-button")
 const replayButton = document.querySelector("#replay-button")
 const questionImage = document.querySelector("#question-image")
 const progressBar = document.querySelector("progress")
-const menuButton = document.querySelectorAll(".menuButton")
+const menu = document.querySelector(".menu")
 
 let currentQuestionIndex = 0
 let currentQuiz;
@@ -22,13 +22,13 @@ function loadQuiz(quizName){
     nextButton.style.display = "inline-block"
     replayButton.style.display = "none"
     if(quizName=="Alsace"){
-        currentQuiz = quiz_nourriture_francaise.questionsAlsace
+        currentQuiz = quiz_nourriture_francaise.Alsace
     }
     else if(quizName=="DET"){
-        currentQuiz = quiz_nourriture_francaise.questionsDET
+        currentQuiz = quiz_nourriture_francaise.DET
     }
     else{
-        currentQuiz = quiz_nourriture_francaise.questionsSucre
+        currentQuiz = quiz_nourriture_francaise.Sucre
     }
     loadQuestion()
 }
@@ -113,11 +113,17 @@ function checkAnswer(){
 }
 
 function initMenu(){
-    menuButton.forEach(button =>{
-        button.addEventListener("click", ()=>{
-            loadQuiz(button.value)
+    for (const [key, value] of Object.entries(quiz_nourriture_francaise)) {   
+        const menuButton = document.createElement('button')
+        menuButton.innerText = key
+        menuButton.value = key
+        menuButton.classList.add('menuButton')
+        menuButton.addEventListener("click", ()=>{
+            loadQuiz(menuButton.value)
         })
-    })
+        menu.appendChild(menuButton)
+    }
 }
+
 loadQuiz("DET")
 initMenu()
