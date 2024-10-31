@@ -1,20 +1,6 @@
 body {
     background: linear-gradient( to right, rgb(2, 30, 66), rgb(255, 255, 255), rgb(200, 16, 46) );
     text-align: center;
-    
-}
-
-.options>*{
-    background-color: rgb(255, 255, 255);
-    height: 30px;
-    width: 500px;
-    border-radius: 15px;
-    border:solid;
-    border-color: #ffffff;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-    font-family: "Gill Sans", sans-serif;
-    color: #2c5364;
 }
 
 .question {
@@ -26,7 +12,40 @@ body {
     letter-spacing: 0.5px;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     font-family: "Gill Sans", sans-serif;
-  }
+}
+
+#question-image {
+    height: 300px;
+    width: 300px;
+    border: solid;
+    border-radius: 15px;
+    border-color: #2c5364;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.options{
+    background-color: rgb(255, 255, 255);
+    padding: 15px;
+    height: 150px;
+    width: 500px;
+    border: solid;
+    border-radius: 15px;
+    border-color: #2c5364;
+}
+
+.options>*{
+    background-color: rgb(255, 255, 255);
+    height: 30px;
+    width: 500px;
+    border-radius: 15px;
+    border:solid;
+    border-color: #ffffff;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    margin-bottom: 10px;
+    letter-spacing: 0.5px;
+    font-family: "Gill Sans", sans-serif;
+    color: #2c5364;
+}
 
 .button-container>* { 
     background-color: #2c5364;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>projet-collectif-nantes-quizz-det-team</title>
     <link defer rel="stylesheet" href="style.css"/>
     <script defer src="questions.js" type="module"></script>
     <script defer src="game.js" type="module"></script>
@@ -12,14 +12,17 @@
 	<div id="quiz-container">
 		<!-- Section pour la question -->
 		<div class="question"></div><br/>
+		<!-- Section pour les images -->
+		<img id="question-image" src="./images/image1.jpg" alt="Question image"></div><br/>
 		<!-- Section pour les options -->
 		<div class="options"></div>
 		<!-- Prévois déjà le design du bouton "suivant" pour passer à la prochaine question -->
-		<div class="button-container">
+		<div class="button-container"><br/>
 		  <button id="next-button">Suivant</button>
 		  <button id="replay-button" style="display: none;">Rejouer</button>
 		</div>
 	  <div id="timer">30</div>
+		<progress max="5" value="0"></progress>
 	</div>
 </body>
 </html>

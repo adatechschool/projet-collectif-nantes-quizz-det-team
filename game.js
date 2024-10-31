@@ -5,6 +5,9 @@ const answersBox = document.querySelector('.options')
 const nextButton = document.querySelector("#next-button")
 const replayButton = document.querySelector("#replay-button")
 const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
+const questionImage = document.querySelector("#question-image")
+const progressBar = document.querySelector("progress")
+
 
 let currentQuestionIndex = 0
 
@@ -31,7 +34,10 @@ function loadQuestion() {
     answersBox.innerHTML = ''
     reponseDuJoueur = 0
     tempsRestant = 31; // initiale de timer à 30
+    
     const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
+
+    questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
   
     questionBox.innerText = currentQuestion.text
   
@@ -53,11 +59,16 @@ function loadQuestion() {
         answersBox.appendChild(button)
         
     })
+
   }
   const interval = setInterval (decrementerTemps, 1000)
+}
+
+
 nextButton.addEventListener('click', ()=>{
     if(reponseDuJoueur!=0){
         currentQuestionIndex ++ 
+        progressBar.value += 1
         if(currentQuestionIndex<quiz_nourriture_francaise.questions.length){
             loadQuestion()
             
@@ -65,16 +76,17 @@ nextButton.addEventListener('click', ()=>{
         else{
             
             if(score==5){
-                questionBox.innerText = "Bravo tu connais la culture française. " + score + "/5"
+                questionBox.innerText = "Bravo, tu connais la culture française. " + score + "/5"
             }
             else if(score<=2){
-                questionBox.innerText = "Tu as des lacunes en culture française mais continue tes efforts. " + score + "/5"
+                questionBox.innerText = "Tu as quelques lacunes en culture française mais continue tes efforts. " + score + "/5"
             }
             else{
-                questionBox.innerText = "Bravo tu as un score de " + score + "/5"
+                questionBox.innerText = "Bravo, tu as un score de " + score + "/5"
             }
             answersBox.style.display = "none"
             nextButton.style.display = "none"
+            questionImage.style.display = "none"
             replayButton.style.display = "inline-block"
         }
  
@@ -86,8 +98,10 @@ nextButton.addEventListener('click', ()=>{
 replayButton.addEventListener('click', () =>{
     currentQuestionIndex = 0
     score = 0
+    progressBar.value = 0
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
+    questionImage.style.display = "inline-block"
     replayButton.style.display = "none"
     
 
