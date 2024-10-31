@@ -8,7 +8,7 @@ const timerElement = document.getElementById("timer");// Sélectionne l'élémen
 const questionImage = document.querySelector("#question-image")
 const progressBar = document.querySelector("progress")
 const menu = document.querySelector(".menu")
-
+const interval = setInterval (decrementerTemps, 1000)
 
 let currentQuestionIndex = 0
 let currentQuiz;
@@ -22,12 +22,12 @@ function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
 //si le temps restant est = à 0 
-  if (tempsRestant === 0) {
+  if (tempsRestant <= 0) {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
     console.log("Le compte à rebours est terminé !") 
   }
-
+}
 function loadQuiz(quizName){
     currentQuestionIndex = 0
     score = 0
@@ -77,7 +77,7 @@ function loadQuestion() {
         answersBox.appendChild(button)
         
     })
-  const interval = setInterval (decrementerTemps, 1000)
+  
 }
 
 
