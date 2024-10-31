@@ -1,6 +1,6 @@
 export const quiz_nourriture_francaise= 
 {
-questions: 
+DET: 
 [
     {
         text: "Comment s'appellent les bonbons spécialités de Cambrai ?",
@@ -33,6 +33,61 @@ questions:
         correct_answer: "kouign-amann"
     },
     
+],
+Alsace:
+[
+    {
+        text: "Quel plat traditionnel alsacien est composé de chou fermenté, de viandes et de pommes de terre ?",
+        options: ["La choucroute", "Le cassoulet", "Le bœuf bourguignon", "La potée lorraine"],
+        correct_answer: "La choucroute"
+    },
+    {
+        text: "Quelle est la spécialité sucrée alsacienne souvent servie pendant les fêtes de fin d'année, aromatisée à la cannelle et aux épices ?",
+        options: ["Le pain d'épices", "Le kouign-amann", "Le nougat", "La tarte aux pommes"],
+        correct_answer: "Le pain d'épices"
+    },
+    {
+        text: "Quelle tarte flambée alsacienne est faite de crème, de lardons et d'oignons ?",
+        options: ["La tarte flambée", "La quiche lorraine", "La pissaladière", "La flognarde"],
+        correct_answer: "La tarte flambée"
+    },
+    {
+        text: "Comment s'appelle le célèbre gâteau alsacien en forme de couronne, souvent servi avec du sucre glace ?",
+        options: ["Le kouglof", "Le cannelé", "La madeleine", "Le baba au rhum"],
+        correct_answer: "Le kouglof"
+    },
+    {
+        text: "Quel fromage à pâte pressée est emblématique de l'Alsace ?",
+        options: ["Le munster", "Le camembert", "Le comté", "Le reblochon"],
+        correct_answer: "Le munster"
+    }
+],
+Sucre:
+[
+    {
+        text: "Comment s'appelle la confiserie originaire de Cambrai, faite de menthe et de sucre ?",
+        options: ["Les bêtises", "Les caramels", "Les réglisses", "Les pralines"],
+        correct_answer: "Les bêtises"
+    },
+    {
+        text: "Quelle est la spécialité sucrée de la ville de Montélimar, composée de miel, d'amandes et de sucre ?",
+        options: ["Le nougat", "Le calisson", "La guimauve", "Le macaron"],
+        correct_answer: "Le nougat"
+    },
+    {
+        text: "Quelle pâtisserie en forme de coquillage est typique de la Lorraine et parfumée à la fleur d'oranger ?",
+        options: ["La madeleine", "La cannelé", "Le financier", "Le millefeuille"],
+        correct_answer: "La madeleine"
+    },
+    {
+        text: "Quelle sucrerie ronde, fourrée de chocolat ou de praliné, est une spécialité de Lyon ?",
+        options: ["La papillote", "Le calisson", "La dragée", "La praline"],
+        correct_answer: "La papillote"
+    },
+    {
+        text: "Quelle confiserie, souvent rose, est une spécialité à base de pâte d'amande et d'arômes subtils ?",
+        options: ["Le macaron", "Le calisson", "La dragée", "La praline rose"],
+        correct_answer: "Le macaron"
+    }
 ]
-
 }

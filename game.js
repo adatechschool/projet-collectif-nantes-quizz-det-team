@@ -7,9 +7,11 @@ const replayButton = document.querySelector("#replay-button")
 const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
 const questionImage = document.querySelector("#question-image")
 const progressBar = document.querySelector("progress")
+const menu = document.querySelector(".menu")
 
 
 let currentQuestionIndex = 0
+let currentQuiz;
 
 let reponseDuJoueur = 0
 let score = 0
@@ -25,8 +27,24 @@ function decrementerTemps() {
     //on affiche dans la console Le compte à rebours est terminé
     console.log("Le compte à rebours est terminé !") 
   }
-  
 
+function loadQuiz(quizName){
+    currentQuestionIndex = 0
+    score = 0
+    progressBar.value = 0
+    answersBox.style.display = "inline-block"
+    nextButton.style.display = "inline-block"
+    replayButton.style.display = "none"
+    if(quizName=="Alsace"){
+        currentQuiz = quiz_nourriture_francaise.Alsace
+    }
+    else if(quizName=="DET"){
+        currentQuiz = quiz_nourriture_francaise.DET
+    }
+    else{
+        currentQuiz = quiz_nourriture_francaise.Sucre
+    }
+    loadQuestion()
 }
 // Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
 //const interval = setInterval(decrementerTemps,1000)
@@ -35,7 +53,7 @@ function loadQuestion() {
     reponseDuJoueur = 0
     tempsRestant = 31; // initiale de timer à 30
     
-    const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
+    const currentQuestion = currentQuiz[currentQuestionIndex]
 
     questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
   
@@ -67,7 +85,7 @@ nextButton.addEventListener('click', ()=>{
     if(reponseDuJoueur!=0){
         currentQuestionIndex ++ 
         progressBar.value += 1
-        if(currentQuestionIndex<quiz_nourriture_francaise.questions.length){
+        if(currentQuestionIndex<currentQuiz.length){
             loadQuestion()
             
         }
@@ -92,7 +110,6 @@ nextButton.addEventListener('click', ()=>{
     
 })
 
-
 replayButton.addEventListener('click', () =>{
     currentQuestionIndex = 0
     score = 0
@@ -107,7 +124,7 @@ replayButton.addEventListener('click', () =>{
 })
 
 function checkAnswer(){
-    if(quiz_nourriture_francaise.questions[currentQuestionIndex].correct_answer==reponseDuJoueur){
+    if(currentQuiz[currentQuestionIndex].correct_answer==reponseDuJoueur){
         console.log("bonne réponse")
         score +=1
         return true
@@ -118,4 +135,18 @@ function checkAnswer(){
     }
 }
 
-loadQuestion()
+function initMenu(){
+    for (const [key, value] of Object.entries(quiz_nourriture_francaise)) {   
+        const menuButton = document.createElement('button')
+        menuButton.innerText = key
+        menuButton.value = key
+        menuButton.classList.add('menuButton')
+        menuButton.addEventListener("click", ()=>{
+            loadQuiz(menuButton.value)
+        })
+        menu.appendChild(menuButton)
+    }
+}
+
+loadQuiz("DET")
+initMenu()
