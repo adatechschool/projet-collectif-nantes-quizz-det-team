@@ -4,7 +4,7 @@ const questionBox = document.querySelector(".question")
 const answersBox = document.querySelector('.options')
 const nextButton = document.querySelector("#next-button")
 const replayButton = document.querySelector("#replay-button")
-const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
+const timerElement = document.getElementById("timer")// Sélectionne l'élément HTML où le temps sera affiché
 const questionImage = document.querySelector("#question-image")
 const progressBar = document.querySelector("progress")
 const menu = document.querySelector(".menu")
@@ -27,6 +27,7 @@ function decrementerTemps() {
     //on affiche dans la console Le compte à rebours est terminé
     console.log("Le compte à rebours est terminé !") 
   }
+}
 
 function loadQuiz(quizName){
     currentQuestionIndex = 0
