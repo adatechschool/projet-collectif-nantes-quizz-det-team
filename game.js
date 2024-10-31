@@ -15,7 +15,8 @@ let currentQuiz;
 
 let reponseDuJoueur = 0
 let score = 0
-let tempsRestant = 31;//Temps initial en secondes
+let interval;
+let tempsRestant;//Temps initial en secondes
 //const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
 
 function decrementerTemps() {
@@ -48,12 +49,14 @@ function loadQuiz(quizName){
     loadQuestion()
 }
 // Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
-//const interval = setInterval(decrementerTemps,1000)
 function loadQuestion() {
     answersBox.innerHTML = ''
     reponseDuJoueur = 0
-    tempsRestant = 31; // initiale de timer à 30
-    
+    tempsRestant = 30 // initiale de timer à 30
+    timerElement.textContent = tempsRestant
+    clearInterval(interval)
+    interval = setInterval (decrementerTemps, 1000)
+
     const currentQuestion = currentQuiz[currentQuestionIndex]
 
     questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
@@ -78,7 +81,6 @@ function loadQuestion() {
         answersBox.appendChild(button)
         
     })
-  const interval = setInterval (decrementerTemps, 1000)
 }
 
 
@@ -105,6 +107,7 @@ nextButton.addEventListener('click', ()=>{
             nextButton.style.display = "none"
             questionImage.style.display = "none"
             replayButton.style.display = "inline-block"
+            timerElement.style.display = "none"
         }
  
     }
@@ -119,7 +122,8 @@ replayButton.addEventListener('click', () =>{
     nextButton.style.display = "inline-block"
     questionImage.style.display = "inline-block"
     replayButton.style.display = "none"
-    
+    timerElement.style.display = "block"
+
 
     loadQuestion()
 })
