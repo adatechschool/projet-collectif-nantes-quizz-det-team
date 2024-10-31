@@ -1,23 +1,23 @@
 import {quiz_nourriture_francaise} from "./questions.js"; 
 
-const questionBox = document.querySelector(".question")
-const answersBox = document.querySelector('.options')
-const nextButton = document.querySelector("#next-button")
-const replayButton = document.querySelector("#replay-button")
-const timerElement = document.getElementById("timer")// Sélectionne l'élément HTML où le temps sera affiché
-const questionImage = document.querySelector("#question-image")
-const progressBar = document.querySelector("progress")
-const menu = document.querySelector(".menu")
+//--------------------Section DOM------------------------
+const questionBox = document.querySelector(".question") //Intitulé ed la question
+const answersBox = document.querySelector('.options') //Section des réponses
+const nextButton = document.querySelector("#next-button") //Bouton suivant
+const replayButton = document.querySelector("#replay-button") //Bouton rejouer
+const timerElement = document.getElementById("timer") // Sélectionne l'élément HTML où le temps sera affiché
+const questionImage = document.querySelector("#question-image") //Image de la question
+const progressBar = document.querySelector("progress") //Barre de progression
+const menu = document.querySelector(".menu") //Section choix du theme
+//-------------------------------------------------------
 
+let currentQuestionIndex = 0 //index de la question actuelle
+let currentQuiz; //array : le quiz actuel
 
-let currentQuestionIndex = 0
-let currentQuiz;
-
-let reponseDuJoueur = 0
-let score = 0
-let interval;
+let reponseDuJoueur = 0 //0 = le joueur n'as pas choisi de réponse
+let score = 0 //le score
+let interval; //le timer
 let tempsRestant;//Temps initial en secondes
-//const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
 
 function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
