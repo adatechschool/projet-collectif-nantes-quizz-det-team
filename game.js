@@ -4,26 +4,42 @@ const questionBox = document.querySelector(".question")
 const answersBox = document.querySelector('.options')
 const nextButton = document.querySelector("#next-button")
 const replayButton = document.querySelector("#replay-button")
+const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
 
 let currentQuestionIndex = 0
 
 let reponseDuJoueur = 0
 let score = 0
+let tempsRestant = 31;//Temps initial en secondes
+//const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
 
+function decrementerTemps() {
+  tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
+  timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
+//si le temps restant est = à 0 
+  if (tempsRestant === 0) {
+    clearInterval(interval)//annule l'action répétitive temporisée
+    //on affiche dans la console Le compte à rebours est terminé
+    console.log("Le compte à rebours est terminé !") 
+  }
+  
+
+}
+// Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
+//const interval = setInterval(decrementerTemps,1000)
 function loadQuestion() {
     answersBox.innerHTML = ''
     reponseDuJoueur = 0
-    
+    tempsRestant = 31; // initiale de timer à 30
     const currentQuestion = quiz_nourriture_francaise.questions[currentQuestionIndex]
   
     questionBox.innerText = currentQuestion.text
-     //currentQuestion crée 4 bouttons
+  
     currentQuestion.options.forEach(option => {
         const button = document.createElement('button')
         button.innerText = option
         button.classList.add('answer')
         button.addEventListener('click',()=>{
-            // si le reponse du joueur=0
             if(reponseDuJoueur==0){
                 reponseDuJoueur = option
                 if(checkAnswer()){
@@ -34,16 +50,17 @@ function loadQuestion() {
                 }
             }
         })
-        //// Ajouter le bouton à la boîte de réponses
         answersBox.appendChild(button)
+        
     })
   }
-
+  const interval = setInterval (decrementerTemps, 1000)
 nextButton.addEventListener('click', ()=>{
     if(reponseDuJoueur!=0){
         currentQuestionIndex ++ 
         if(currentQuestionIndex<quiz_nourriture_francaise.questions.length){
             loadQuestion()
+            
         }
         else{
             
@@ -60,7 +77,9 @@ nextButton.addEventListener('click', ()=>{
             nextButton.style.display = "none"
             replayButton.style.display = "inline-block"
         }
+ 
     }
+    
 })
 
 
@@ -70,6 +89,8 @@ replayButton.addEventListener('click', () =>{
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
     replayButton.style.display = "none"
+    
+
     loadQuestion()
 })
 
