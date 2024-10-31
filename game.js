@@ -103,6 +103,7 @@ nextButton.addEventListener('click', ()=>{
             answersBox.style.display = "none"
             nextButton.style.display = "none"
             questionImage.style.display = "none"
+            questionImage.style.display = "none"
             replayButton.style.display = "inline-block"
         }
  
@@ -116,6 +117,7 @@ replayButton.addEventListener('click', () =>{
     progressBar.value = 0
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
+    questionImage.style.display = "inline-block"
     questionImage.style.display = "inline-block"
     replayButton.style.display = "none"
     
