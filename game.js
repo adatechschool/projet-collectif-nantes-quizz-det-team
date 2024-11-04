@@ -11,7 +11,7 @@ const progressBar = document.querySelector("progress") //Barre de progression
 const menu = document.querySelector(".menu") //Section choix du theme
 //-------------------------------------------------------
 
-let currentQuestionIndex = 0 //index de la question actuelle
+let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
 
 let reponseDuJoueur = 0 //0 = le joueur n'as pas choisi de réponse
@@ -30,15 +30,18 @@ function decrementerTemps() {
   }
 }
 
-function loadQuiz(quizName){
+function loadQuiz(quizName){ //charge un quiz choisit
+    //remet des valeurs à 0 pour bien commencer le quiz
     currentQuestionIndex = 0
     score = 0
     progressBar.value = 0
+    //affiche ce qu'il faut afficher
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
     questionImage.style.display = "inline-block" 
     replayButton.style.display = "none"
     timerElement.style.display = "block"
+    //selectionne le quiz choisit
     if(quizName=="Alsace"){
         currentQuiz = quiz_nourriture_francaise.Alsace
     }
@@ -48,28 +51,32 @@ function loadQuiz(quizName){
     else{
         currentQuiz = quiz_nourriture_francaise.Sucre
     }
-    loadQuestion()
+    loadQuestion() //charge la question
 }
-// Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
-function loadQuestion() {
+
+function loadQuestion() { //charge une question
+    //remet des valeurs à 0 pour bien executer la question
     answersBox.innerHTML = ''
     reponseDuJoueur = 0
     tempsRestant = 30 // initiale de timer à 30
     timerElement.textContent = tempsRestant
     clearInterval(interval)
+    // Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
     interval = setInterval (decrementerTemps, 1000)
 
-    const currentQuestion = currentQuiz[currentQuestionIndex]
+    const currentQuestion = currentQuiz[currentQuestionIndex] //selectionne la question
 
     questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
-  
-    questionBox.innerText = currentQuestion.text
-  
+
+    questionBox.innerText = currentQuestion.text //affiche l'intitulé de la question
+
+    //creer des boutons avec les réponses à l'intérieur
     currentQuestion.options.forEach(option => {
-        const button = document.createElement('button')
-        button.innerText = option
-        button.classList.add('answer')
-        button.addEventListener('click',()=>{
+        const button = document.createElement('button') //le bouton
+        button.innerText = option //le texte de la réponse à l'intérieur du bouton
+        button.classList.add('answer') //ajoute une classe
+        button.addEventListener('click',()=>{ //permet de cliquer sur chaque bouton
+            //change la couleur du bouton en fonction de la réponse
             if(reponseDuJoueur==0){
                 reponseDuJoueur = option
                 if(checkAnswer()){
@@ -80,7 +87,7 @@ function loadQuestion() {
                 }
             }
         })
-        answersBox.appendChild(button)
+        answersBox.appendChild(button) //ajoute le bouton dans la section dédié
         
     })
 }
