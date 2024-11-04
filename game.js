@@ -51,6 +51,7 @@ function loadQuiz(quizName){ //charge un quiz choisit
     else{
         currentQuiz = quiz_nourriture_francaise.Sucre
     }
+    progressBar.max = currentQuiz.length
     loadQuestion() //charge la question
 }
 
