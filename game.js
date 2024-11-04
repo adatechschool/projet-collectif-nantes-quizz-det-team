@@ -1,7 +1,7 @@
 import {quiz_nourriture_francaise} from "./questions.js"; 
 
 //--------------------Section DOM------------------------
-const questionBox = document.querySelector(".question") //Intitulé ed la question
+const questionBox = document.querySelector(".question") //Intitulé de la question
 const answersBox = document.querySelector('.options') //Section des réponses
 const nextButton = document.querySelector("#next-button") //Bouton suivant
 const replayButton = document.querySelector("#replay-button") //Bouton rejouer
@@ -46,8 +46,8 @@ function loadQuiz(quizName){ //charge un quiz choisit
     if(quizName=="Alsace"){
         currentQuiz = quiz_nourriture_francaise.Alsace
     }
-    else if(quizName=="DET"){
-        currentQuiz = quiz_nourriture_francaise.DET
+    else if(quizName=="Global"){
+        currentQuiz = quiz_nourriture_francaise.Global
     }
     else{
         currentQuiz = quiz_nourriture_francaise.Sucre
@@ -165,5 +165,5 @@ function initMenu(){
     }
 }
 
-loadQuiz("DET")
+loadQuiz("Global")
 initMenu()
