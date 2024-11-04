@@ -13,6 +13,7 @@ body{
     letter-spacing: 0.5px;
     font-family: "Gill Sans", sans-serif;
     color: #ffffff;
+    margin-right: 30px;
 }
 
 .menuButton>*{
