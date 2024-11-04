@@ -1,22 +1,23 @@
 import {quiz_nourriture_francaise} from "./questions.js"; 
 
-const questionBox = document.querySelector(".question")
-const answersBox = document.querySelector('.options')
-const nextButton = document.querySelector("#next-button")
-const replayButton = document.querySelector("#replay-button")
-const timerElement = document.getElementById("timer")// Sélectionne l'élément HTML où le temps sera affiché
-const questionImage = document.querySelector("#question-image")
-const progressBar = document.querySelector("progress")
-const menu = document.querySelector(".menu")
+//--------------------Section DOM------------------------
+const questionBox = document.querySelector(".question") //Intitulé ed la question
+const answersBox = document.querySelector('.options') //Section des réponses
+const nextButton = document.querySelector("#next-button") //Bouton suivant
+const replayButton = document.querySelector("#replay-button") //Bouton rejouer
+const timerElement = document.getElementById("timer") // Sélectionne l'élément HTML où le temps sera affiché
+const questionImage = document.querySelector("#question-image") //Image de la question
+const progressBar = document.querySelector("progress") //Barre de progression
+const menu = document.querySelector(".menu") //Section choix du theme
+//-------------------------------------------------------
 
+let currentQuestionIndex; //index de la question actuelle
+let currentQuiz; //array : le quiz actuel
 
-let currentQuestionIndex = 0
-let currentQuiz;
-
-let reponseDuJoueur = 0
-let score = 0
-let tempsRestant = 31;//Temps initial en secondes
-//const timerElement = document.getElementById("timer");// Sélectionne l'élément HTML où le temps sera affiché
+let reponseDuJoueur = 0 //0 = le joueur n'as pas choisi de réponse
+let score = 0 //le score
+let interval; //le timer
+let tempsRestant;//Temps initial en secondes
 
 function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
@@ -29,13 +30,18 @@ function decrementerTemps() {
   }
 }
 
-function loadQuiz(quizName){
+function loadQuiz(quizName){ //charge un quiz choisit
+    //remet des valeurs à 0 pour bien commencer le quiz
     currentQuestionIndex = 0
     score = 0
     progressBar.value = 0
+    //affiche ce qu'il faut afficher
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
+    questionImage.style.display = "inline-block" 
     replayButton.style.display = "none"
+    timerElement.style.display = "block"
+    //selectionne le quiz choisit
     if(quizName=="Alsace"){
         currentQuiz = quiz_nourriture_francaise.Alsace
     }
@@ -45,26 +51,32 @@ function loadQuiz(quizName){
     else{
         currentQuiz = quiz_nourriture_francaise.Sucre
     }
-    loadQuestion()
+    loadQuestion() //charge la question
 }
-// Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
-//const interval = setInterval(decrementerTemps,1000)
-function loadQuestion() {
+
+function loadQuestion() { //charge une question
+    //remet des valeurs à 0 pour bien executer la question
     answersBox.innerHTML = ''
     reponseDuJoueur = 0
-    tempsRestant = 31; // initiale de timer à 30
-    
-    const currentQuestion = currentQuiz[currentQuestionIndex]
+    tempsRestant = 30 // initiale de timer à 30
+    timerElement.textContent = tempsRestant
+    clearInterval(interval)
+    // Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
+    interval = setInterval (decrementerTemps, 1000)
+
+    const currentQuestion = currentQuiz[currentQuestionIndex] //selectionne la question
 
     questionImage.src = `./images/${currentQuestion.image}`// ajout de la photo
-  
-    questionBox.innerText = currentQuestion.text
-  
+
+    questionBox.innerText = currentQuestion.text //affiche l'intitulé de la question
+
+    //creer des boutons avec les réponses à l'intérieur
     currentQuestion.options.forEach(option => {
-        const button = document.createElement('button')
-        button.innerText = option
-        button.classList.add('answer')
-        button.addEventListener('click',()=>{
+        const button = document.createElement('button') //le bouton
+        button.innerText = option //le texte de la réponse à l'intérieur du bouton
+        button.classList.add('answer') //ajoute une classe
+        button.addEventListener('click',()=>{ //permet de cliquer sur chaque bouton
+            //change la couleur du bouton en fonction de la réponse
             if(reponseDuJoueur==0){
                 reponseDuJoueur = option
                 if(checkAnswer()){
@@ -75,10 +87,9 @@ function loadQuestion() {
                 }
             }
         })
-        answersBox.appendChild(button)
+        answersBox.appendChild(button) //ajoute le bouton dans la section dédié
         
     })
-  const interval = setInterval (decrementerTemps, 1000)
 }
 
 
@@ -104,8 +115,8 @@ nextButton.addEventListener('click', ()=>{
             answersBox.style.display = "none"
             nextButton.style.display = "none"
             questionImage.style.display = "none"
-            questionImage.style.display = "none"
             replayButton.style.display = "inline-block"
+            timerElement.style.display = "none"
         }
  
     }
@@ -119,9 +130,9 @@ replayButton.addEventListener('click', () =>{
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
     questionImage.style.display = "inline-block"
-    questionImage.style.display = "inline-block"
     replayButton.style.display = "none"
-    
+    timerElement.style.display = "block"
+
 
     loadQuestion()
 })
