@@ -83,7 +83,7 @@ function loadQuestion() { //charge une question
             if(reponseDuJoueur==0){
                 reponseDuJoueur = option
                 if(checkAnswer()){
-                    button.style.borderColor = 'green'
+                    button.style.backgroundColor = 'green'
                 }
                 else{
                     button.style.borderColor = 'red'
@@ -153,10 +153,10 @@ function checkAnswer(){
 }
 
 function initMenu(){
-    for (const [key, value] of Object.entries(quiz_nourriture_francaise)) {   
+    for (const [nomDuTheme, value] of Object.entries(quiz_nourriture_francaise)) {   
         const menuButton = document.createElement('button')
-        menuButton.innerText = key
-        menuButton.value = key
+        menuButton.innerText = nomDuTheme
+        menuButton.value = nomDuTheme
         menuButton.classList.add('menuButton')
         menuButton.addEventListener("click", ()=>{
             loadQuiz(menuButton.value)
