@@ -82,3 +82,19 @@ body {
     justify-content: center;
 }
 
+#timer {
+    width: 100px;
+    height: 200px;
+    font-size: 10px;
+    color:#2c5364;
+    background-color:paleturquoise;
+    padding: 10px;
+    border-radius:10px;
+    display:flex;
+    list-style-type: none;
+    padding-left: 0;
+    justify-self: center;
+    justify-content: center;
+    align-items:center ;
+    
+  }
