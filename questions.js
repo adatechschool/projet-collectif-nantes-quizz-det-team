@@ -1,36 +1,36 @@
 export const quiz_nourriture_francaise= 
 {
-DET: 
+Global: 
 [
     {
         text: "Comment s'appellent les bonbons spécialités de Cambrai ?",
         image: "image1.jpg",
-        options: ["les mignardises", "les bêtises", "les arlequins", "les cambrons"],
-        correct_answer: "les bêtises"
+        options: ["Les mignardises", "Les bêtises", "Les arlequins", "Les cambrons"],
+        correct_answer: "Les bêtises"
     },
     {
         text: "Quel est le plat emblématique des français le jour de noël ?",
         image: "image2.png",
-        options: ["la dinde rôtie", "les pizzas", "les brocolis", "les patates douces"],
-        correct_answer: "la dinde rôtie"
+        options: ["La dinde rôtie", "Les pizzas", "Les brocolis", "Les patates douces"],
+        correct_answer: "La dinde rôtie"
     },
     {
         text: "D'ou vient le beurre salé ?",
         image: "image3.png",
-        options: ["de la tête d'un illuminé breton", "de régions qui souhaitaient concerver le beurre plus longtemps", "de Clermont-Ferrant", "de vaches gavées au sel"],
-        correct_answer: "de régions qui souhaitaient concerver le beurre plus longtemps"
+        options: ["De la tête d'un illuminé breton", "De régions qui souhaitaient concerver le beurre plus longtemps", "De Clermont-Ferrant", "De vaches gavées au sel"],
+        correct_answer: "De régions qui souhaitaient concerver le beurre plus longtemps"
     },
     {
         text: "Laquelle de ces patisseries n'utilise pas d'alcool dans sa préparation ?",
         image: "image4.jpg",
-        options: ["le gâteau nantais", "le baba au rhum", "le kouign-amann", "le tiramisu"],
-        correct_answer: "le kouign-amann"
+        options: ["Le gâteau nantais", "Le baba au rhum", "Le kouign-amann", "Le tiramisu"],
+        correct_answer: "Le kouign-amann"
     },
     {
         text: "Laquelle des suggestions suivantes à la bonne orthographe ?",
         image: "image5.jpg",
-        options: ["coun ya-man", "kouign-amann", "queen hamam", "cuign-amann"],
-        correct_answer: "kouign-amann"
+        options: ["Coun ya-man", "Kouign-amann", "Queen hamam", "Cuign-amann"],
+        correct_answer: "Kouign-amann"
     },
     
 ],
@@ -48,7 +48,7 @@ Alsace:
     },
     {
         text: "Quelle tarte flambée alsacienne est faite de crème, de lardons et d'oignons ?",
-        options: ["La tarte flambée", "La quiche lorraine", "La pissaladière", "La flognarde"],
+        options: ["La quiche lorraine", "La pissaladière", "La flognarde", "La tarte flambée"],
         correct_answer: "La tarte flambée"
     },
     {
@@ -66,7 +66,7 @@ Sucre:
 [
     {
         text: "Comment s'appelle la confiserie originaire de Cambrai, faite de menthe et de sucre ?",
-        options: ["Les bêtises", "Les caramels", "Les réglisses", "Les pralines"],
+        options: ["Les caramels", "Les réglisses", "Les bêtises", "Les pralines"],
         correct_answer: "Les bêtises"
     },
     {

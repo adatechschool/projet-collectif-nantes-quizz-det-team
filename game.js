@@ -2,11 +2,11 @@ import {quiz_nourriture_francaise} from "./questions.js";
 
 const questionBox = document.querySelector(".question")
 const answersBox = document.querySelector('.options')
-const nextButton = document.querySelector("#next-button")
+const nextButton = document.querySelector("#next-button") 
 const replayButton = document.querySelector("#replay-button")
 const timerElement = document.getElementById("timer")// Sélectionne l'élément HTML où le temps sera affiché
-const questionImage = document.querySelector("#question-image")
-const progressBar = document.querySelector("progress")
+const questionImage = document.querySelector("#question-image") // ajout d'images par questions
+const progressBar = document.querySelector("progress") // barre de progression
 const menu = document.querySelector(".menu")
 
 
@@ -39,8 +39,8 @@ function loadQuiz(quizName){
     if(quizName=="Alsace"){
         currentQuiz = quiz_nourriture_francaise.Alsace
     }
-    else if(quizName=="DET"){
-        currentQuiz = quiz_nourriture_francaise.DET
+    else if(quizName=="Global"){
+        currentQuiz = quiz_nourriture_francaise.Global
     }
     else{
         currentQuiz = quiz_nourriture_francaise.Sucre
@@ -151,5 +151,5 @@ function initMenu(){
     }
 }
 
-loadQuiz("DET")
+loadQuiz("Global")
 initMenu()
