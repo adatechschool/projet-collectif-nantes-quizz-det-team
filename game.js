@@ -26,7 +26,8 @@ function decrementerTemps() {
   if (tempsRestant === 0) {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
-    console.log("Le compte à rebours est terminé !") 
+    console.log("Le compte à rebours est terminé !")
+    reponseDuJoueur = 1 
   }
 }
 
@@ -59,7 +60,7 @@ function loadQuestion() { //charge une question
     //remet des valeurs à 0 pour bien executer la question
     answersBox.innerHTML = ''
     reponseDuJoueur = 0
-    tempsRestant = 30 // initiale de timer à 30
+    tempsRestant = 15 // initiale de timer à 30
     timerElement.textContent = tempsRestant
     clearInterval(interval)
     // Appel de la fonction toutes les secondes pour mettre à jour le compte à rebours
@@ -78,6 +79,7 @@ function loadQuestion() { //charge une question
         button.classList.add('answer') //ajoute une classe
         button.addEventListener('click',()=>{ //permet de cliquer sur chaque bouton
             //change la couleur du bouton en fonction de la réponse
+            clearInterval(interval)
             if(reponseDuJoueur==0){
                 reponseDuJoueur = option
                 if(checkAnswer()){
