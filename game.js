@@ -14,12 +14,12 @@ const progressBar = document.querySelector("progress") //Barre de progression
 const menu = document.querySelector(".menu") //Section choix du theme
 const welcomeParagraphe = document.querySelector(".paragraphe-bienvenue")
 const pageTitle = document.querySelector("h1")
+const traduireEnFrançais = document.querySelector("#traduire-en-français")
+const tranduireEnEnglish = document.querySelector("#traduire-en-anglais")
 //----------------------------------------------------
 
-let quizVersion = quiz_french_food
-const traduireEnFrançais= document.querySelector("#traduire-en-français")
-const tranduireEnEnglish=document.querySelector("#traduire-en-anglais")
-//-------------------------------------------------------
+let quizVersion = quiz_nourriture_francaise
+
 
 let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
@@ -221,6 +221,19 @@ function translate(language){
     welcomeParagraphe.innerHTML = translation[language].welcome_paragraphe
     pageTitle.innerText =  translation[language].page_title
 }
-const myLanguage = "en"
-translate(myLanguage)
+let myLanguage = "fr"
 initMenu()
+
+traduireEnFrançais.addEventListener('click',()=>{
+    myLanguage = "fr"
+    translate(myLanguage)
+    quizVersion = quiz_nourriture_francaise
+    // loadQuiz()
+})
+
+tranduireEnEnglish.addEventListener('click',()=>{
+    myLanguage = "en"
+    translate(myLanguage)
+    quizVersion = quiz_french_food
+    // loadQuiz()
+})
