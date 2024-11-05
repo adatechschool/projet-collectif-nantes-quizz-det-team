@@ -60,15 +60,16 @@ function loadQuiz(quizName){ //charge un quiz choisit
     replayButton.style.display = "none"
     timerElement.style.display = "block"
     //selectionne le quiz choisit
-    if(quizName=="Alsace"){
-        currentQuiz = quiz_nourriture_francaise.Alsace
-    }
-    else if(quizName=="Global"){
-        currentQuiz = quiz_nourriture_francaise.Global
-    }
-    else{
-        currentQuiz = quiz_nourriture_francaise.Sucre
-    }
+    currentQuiz = quiz_nourriture_francaise[quizName]
+    // if(quizName=="Alsace"){
+    //     currentQuiz = quiz_nourriture_francaise.Alsace
+    // }
+    // else if(quizName=="Global"){
+    //     currentQuiz = quiz_nourriture_francaise.Global
+    // }
+    // else{
+    //     currentQuiz = quiz_nourriture_francaise.Sucre
+    // }
     progressBar.max = currentQuiz.length
     loadQuestion() //charge la question
 }
