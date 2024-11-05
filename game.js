@@ -16,7 +16,7 @@ const menu = document.querySelector(".menu") //Section choix du theme
 let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
 
-let reponseDuJoueur = 0 //0 = le joueur n'as pas choisi de réponse
+let reponseDuJoueur = "le joueur n'a pas jouer" // le joueur n'as pas choisi de réponse
 let score = 0 //le score
 let interval; //le timer
 let tempsRestant;//Temps initial en secondes
@@ -36,8 +36,8 @@ function decrementerTemps() {
   if (tempsRestant <= 0) {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
-    console.log("Le compte à rebours est terminé !")
-    reponseDuJoueur = 1 
+    alert("le temps est terminé ");
+    reponseDuJoueur = "le temps est terminé" 
   }
 }
 
@@ -73,7 +73,7 @@ function loadQuiz(quizName){ //charge un quiz choisit
 function loadQuestion() { //charge une question
     //remet des valeurs à 0 pour bien executer la question
     answersBox.innerHTML = ''
-    reponseDuJoueur = 0
+    reponseDuJoueur = "le joueur n'a pas jouer"
     tempsRestant = 15 // initiale de timer à 30
     timerElement.textContent = tempsRestant
     clearInterval(interval)
@@ -94,7 +94,7 @@ function loadQuestion() { //charge une question
         button.addEventListener('click',()=>{ //permet de cliquer sur chaque bouton
             //change la couleur du bouton en fonction de la réponse
             clearInterval(interval)
-            if(reponseDuJoueur==0){
+            if(reponseDuJoueur=="le joueur n'a pas jouer"){
                 reponseDuJoueur = option
                 if(checkAnswer()){
                     button.style.backgroundColor = 'green'
@@ -112,7 +112,7 @@ function loadQuestion() { //charge une question
 
 
 nextButton.addEventListener('click', ()=>{
-    if(reponseDuJoueur!=0){
+    if(reponseDuJoueur!="le joueur n'a pas jouer"){
         currentQuestionIndex ++ 
         progressBar.value += 1
         if(currentQuestionIndex<currentQuiz.length){
