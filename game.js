@@ -1,6 +1,6 @@
 import {quiz_nourriture_francaise} from "./questions.js"; 
 
-//--------------------Section DOM------------------------
+//--------------------Section DOM--------------------
 const bienvenueImage = document.querySelector("#image-bienvenue") //Image de bienvenue
 const bienvenueMessage = document.querySelector(".paragraphe-bienvenue") //Message de bienvenue
 const questionBox = document.querySelector(".question") //Intitulé de la question
@@ -11,7 +11,9 @@ const timerElement = document.getElementById("timer") // Sélectionne l'élémen
 const questionImage = document.querySelector("#question-image") //Image de la question
 const progressBar = document.querySelector("progress") //Barre de progression
 const menu = document.querySelector(".menu") //Section choix du theme
-//-------------------------------------------------------
+const welcomeParagraphe = document.querySelector(".paragraphe-bienvenue")
+const pageTitle = document.querySelector("h1")
+//----------------------------------------------------
 
 let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
@@ -180,4 +182,28 @@ function initMenu(){
     }
 }
 
+//--------------------Traduction--------------------
+const translation = {
+    fr:{
+        next_button:"Suivant",
+        replay_button:"Rejouer",
+        welcome_paragraphe:"Bienvenue sur notre quizz sur la nourriture française.<br/> Vous trouverez ci-dessous une liste de thème divers pour tester vos connaissances en gastronomie francaise. <br/>Régalez vous !",
+        page_title:"QUIZZ SUR LA NOURRITURE FRANCAISE"
+
+    },
+    en:{
+        next_button:"Next",
+        replay_button:"Replay",
+        welcome_paragraphe:"Welcome to our French food quiz.<br/> Below you will find a list of various themes to test your knowledge of French gastronomy. <br/>Enjoy!",
+        page_title:"QUIZZ ON FRENCH FOOD"
+    }
+}
+
+function translate(language){
+    nextButton.innerText = translation[language].next_button
+    replayButton.innerText = translation[language].replay_button
+    welcomeParagraphe.innerHTML = translation[language].welcome_paragraphe
+    pageTitle.innerText =  translation[language].page_title
+}
+translate("en")
 initMenu()
