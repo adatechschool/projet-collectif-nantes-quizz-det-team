@@ -1,4 +1,5 @@
 import {quiz_nourriture_francaise} from "./questions.js"; 
+import {quiz_french_food} from "./questionsEN.js";
 
 //--------------------Section DOM--------------------
 const bienvenueImage = document.querySelector("#image-bienvenue") //Image de bienvenue
