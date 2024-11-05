@@ -1,152 +1,171 @@
-body{
-    background: linear-gradient( to right, rgb(2, 30, 66), rgb(255, 255, 255), rgb(200, 16, 46) );
-    text-align: center;
+body {
+  background: linear-gradient(
+    to right,
+    rgb(2, 30, 66),
+    rgb(255, 255, 255),
+    rgb(200, 16, 46)
+  );
+  text-align: center;
 }
 
-#image-bienvenue{
-    height: 400px;
-    width: 400px;
-    border: solid;
-    border-radius: 35%;
-    border-color: #2c5364;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    opacity: 0.60;
+#image-bienvenue {
+  height: 400px;
+  width: 400px;
+  border: solid;
+  border-radius: 35%;
+  border-color: #2c5364;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  opacity: 0.6;
 }
 
-.paragraphe-bienvenue{
-    margin-top: 2%;
-    margin-bottom: 2%;
+.paragraphe-bienvenue {
+  margin-top: 2%;
+  margin-bottom: 2%;
 }
 
-.menuButton{
-    background-color: #2c5364;
-    height: 25px;
-    width: 75px;
-    border-radius: 15px;
-    border-style: none;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-    font-family: "Gill Sans", sans-serif;
-    color: #ffffff;
-    margin-right: 30px;
+#traduire-en-français {
+  float: right;
+  background-color: #ffffff;
+  font-family: "Gill Sans", sans-serif;
+  color: #2c5364;
+  border-color: #2c5364;
 }
 
-.menuButton>*{
-    transition: all .1s;
-    float: left
+#traduire-en-anglais {
+  float: right;
+  background-color: #ffffff;
+  font-family: "Gill Sans", sans-serif;
+  color: #2c5364;
+  border-color: #2c5364;
 }
 
-.menuButton:active{
-    transform: translate(0, 5px);
+.menuButton {
+  background-color: #2c5364;
+  height: 25px;
+  width: 75px;
+  border-radius: 15px;
+  border-style: none;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  font-family: "Gill Sans", sans-serif;
+  color: #ffffff;
+  margin-right: 30px;
 }
 
-
-.question{
-    background-color: rgb(255, 255, 255);
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    border: solid;
-    border-radius: 15px;
-    border-color: #2c5364;
+.menuButton > * {
+  transition: all 0.1s;
+  float: left;
 }
 
-.question:hover{
-    background-color: #f59997;
-    padding: 15px;
+.menuButton:active {
+  transform: translate(0, 5px);
 }
 
-#question-image{
-    height: 300px;
-    width: 300px;
-    border: solid;
-    border-radius: 15px;
-    border-color: #2c5364;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    transition: transform .15s;
-    margin-bottom: 2%;
+.question {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  border: solid;
+  border-radius: 15px;
+  border-color: #2c5364;
 }
 
-#question-image:hover{
-    -ms-transform: scale(1.5); /* IE 9 */
-    -webkit-transform: scale(1.5); /* Safari 3-8 */
-    transform: scale(.75);
-    background-color:  #f59997;
-    padding: 15px;
+.question:hover {
+  background-color: #f59997;
+  padding: 15px;
 }
 
-.options{
-    background-color: rgb(255, 255, 255);
-    padding: 15px;
-    margin-left: auto;
-    margin-right: auto;
-    height: 150px;
-    width: 500px;
-    border: solid;
-    border-radius: 15px;
-    border-color: #2c5364;
+#question-image {
+  height: 300px;
+  width: 300px;
+  border: solid;
+  border-radius: 15px;
+  border-color: #2c5364;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  transition: transform 0.15s;
+  margin-bottom: 2%;
 }
 
-.options>*{
-    background-color: rgb(255, 255, 255);
-    height: 30px;
-    width: 500px;
-    border-radius: 15px;
-    border:solid;
-    border-color: #ffffff;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-    font-family: "Gill Sans", sans-serif;
-    color: #2c5364;
-    transition: all .1s;
-    float: left
+#question-image:hover {
+  -ms-transform: scale(1.5); /* IE 9 */
+  -webkit-transform: scale(1.5); /* Safari 3-8 */
+  transform: scale(0.75);
+  background-color: #f59997;
+  padding: 15px;
 }
 
-.options>*:active{
-    transform: translate(0, 5px);
-    border-bottom: 1px solid;
+.options {
+  background-color: rgb(255, 255, 255);
+  padding: 15px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 500px;
+  border: solid;
+  border-radius: 15px;
+  border-color: #2c5364;
 }
 
-.button-container>*{ 
-    background-color: #2c5364;
-    height: 25px;
-    width: 75px;
-    border-radius: 15px;
-    border-style: none;
-    margin-bottom: 10px;
-    letter-spacing: 0.5px;
-    font-family: "Gill Sans", sans-serif;
-    color: #ffffff;
+.options > * {
+  background-color: rgb(255, 255, 255);
+  height: 30px;
+  width: 500px;
+  border-radius: 15px;
+  border: solid;
+  border-color: #ffffff;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  font-family: "Gill Sans", sans-serif;
+  color: #2c5364;
+  transition: all 0.1s;
+  float: left;
 }
 
-.button-container:active{
-    transform: translate(0, 5px);
+.options > *:active {
+  transform: translate(0, 5px);
+  border-bottom: 1px solid;
 }
 
-.link ol{
-    display:flex;
-    list-style-type: none;
-    padding-left: 0;
-    justify-content: center;
+.button-container > * {
+  background-color: #2c5364;
+  height: 25px;
+  width: 75px;
+  border-radius: 15px;
+  border-style: none;
+  margin-bottom: 10px;
+  letter-spacing: 0.5px;
+  font-family: "Gill Sans", sans-serif;
+  color: #ffffff;
 }
 
-li{
-    margin-right: 30px;
+.button-container:active {
+  transform: translate(0, 5px);
+}
+
+.link ol {
+  display: flex;
+  list-style-type: none;
+  padding-left: 0;
+  justify-content: center;
+}
+
+li {
+  margin-right: 30px;
 }
 
 #timer {
-    width: 40px;
-    height: 20px;
-    font-size: 20px;
-    color:#0b1012;
-    background-color:rgba(30, 202, 116, 0.773);
-    border-radius:40px;
-    display:flex;
-    list-style-type: none;
-    justify-self: center;
-    justify-content: center;
-    align-items:center ;
-    padding: 1%;
-    
+  width: 40px;
+  height: 20px;
+  font-size: 20px;
+  color: #0b1012;
+  background-color: rgba(30, 202, 116, 0.773);
+  border-radius: 40px;
+  display: flex;
+  list-style-type: none;
+  justify-self: center;
+  justify-content: center;
+  align-items: center;
+  padding: 1%;
 }

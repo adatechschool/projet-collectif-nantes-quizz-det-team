@@ -17,6 +17,9 @@ const pageTitle = document.querySelector("h1")
 //----------------------------------------------------
 
 let quizVersion = quiz_french_food
+const traduireEnFrançais= document.querySelector("#traduire-en-français")
+const tranduireEnEnglish=document.querySelector("#traduire-en-anglais")
+//-------------------------------------------------------
 
 let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
@@ -34,7 +37,10 @@ replayButton.style.display = "none"
 timerElement.style.display = "none"
 progressBar.style.display = "none"
 
-function decrementerTemps() {
+
+ traduireEnFrançais.textContent="français"//affiché la page en français
+ tranduireEnEnglish.textContent="english" //affiché la page en english
+ function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
 //si le temps restant est = à 0 
