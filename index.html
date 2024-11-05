@@ -4,35 +4,43 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>projet-collectif-nantes-quizz-det-team</title>
-    <link defer rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="style.css"/>
     <script defer src="questions.js" type="module"></script>
     <script defer src="game.js" type="module"></script>
 </head>
 <body>
-	<div class="menu"></div><br>
-	<div id="quiz-container">
+	<!-- Section pour le choix du theme -->
+	<header class="menu"></header><br>
+	<!-- Section pour le quiz -->
+	<main id="quiz-container">
 		<!-- Section pour la question -->
 		<div class="question"></div><br/>
 		<!-- Section pour les images -->
-		<img id="question-image" src="./images/image1.jpg" alt="Question image"><br>
+		<img id="question-image" src="./images/image1.jpg" alt="Question image"/><br/><br/>
 		<!-- Section pour les options -->
-		<div class="options"></div><br>
-		<!-- Prévois déjà le design du bouton "suivant" pour passer à la prochaine question -->
-		<div class="button-container"><br/>
-		  <button id="next-button">Suivant</button>
-		  <button id="replay-button" style="display: none;">Rejouer</button>
-		</div>
-	  <div id="timer">30</div>
-		<progress max="5" value="0"></progress>
-	</div>
-	<div class="foot">
+		<article class="options"></article>
+		<!-- Section pour les bouttons suivant et rejouer -->
+		<article class="button-container"><br/>
+			<!-- Bouton suivant -->
+			<button id="next-button">Suivant</button>
+			<!-- Bouton Rejouer -->
+			<button id="replay-button" style="display: none;">Rejouer</button>
+		</article>
+		<!-- Section pour le chrono -->
+		<article id="timer">30</article>
+		<!-- Section pour la barre de progression -->
+		<progress max="2" value="0"></progress>
+	</main>
+	<!-- Section pour les liens des autres groupes -->
+	<footer class="foot">
 		<nav class="link">
 			<ol>
+				<!-- les liens -->
 				<li class="link"><a href="https://charlene-44.github.io" target="_blank" rel="noopener noreferrer">groupe 1</a></li>
 				<li class="link"><a href="#">groupe 2</a></li>
 				<li class="link"><a href="#">groupe 3</a></li>
 			</ol>
 		</nav>
-	</div>
+	</footer>
 </body>
 </html>
