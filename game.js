@@ -1,6 +1,8 @@
 import {quiz_nourriture_francaise} from "./questions.js"; 
 
 //--------------------Section DOM------------------------
+const bienvenueImage = document.querySelector("#image-bienvenue") //Image de bienvenue
+const bienvenueMessage = document.querySelector(".paragraphe-bienvenue") //Message de bienvenue
 const questionBox = document.querySelector(".question") //Intitulé de la question
 const answersBox = document.querySelector('.options') //Section des réponses
 const nextButton = document.querySelector("#next-button") //Bouton suivant
@@ -19,6 +21,14 @@ let score = 0 //le score
 let interval; //le timer
 let tempsRestant;//Temps initial en secondes
 
+questionBox.style.display = "none"
+answersBox.style.display = "none"
+nextButton.style.display = "none"
+questionImage.style.display = "none" 
+replayButton.style.display = "none"
+timerElement.style.display = "none"
+progressBar.style.display = "none"
+
 function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
@@ -36,7 +46,11 @@ function loadQuiz(quizName){ //charge un quiz choisit
     currentQuestionIndex = 0
     score = 0
     progressBar.value = 0
-    //affiche ce qu'il faut afficher
+    //affiche le squelette du quizz
+
+    bienvenueImage.style.display = "none"
+    bienvenueMessage.style.display = "none"
+    questionBox.style.display = "block"
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
     questionImage.style.display = "inline-block" 
@@ -166,5 +180,4 @@ function initMenu(){
     }
 }
 
-loadQuiz("Global")
 initMenu()

@@ -3,6 +3,21 @@ body{
     text-align: center;
 }
 
+#image-bienvenue{
+    height: 400px;
+    width: 400px;
+    border: solid;
+    border-radius: 35%;
+    border-color: #2c5364;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    opacity: 0.60;
+}
+
+.paragraphe-bienvenue{
+    margin-top: 2%;
+    margin-bottom: 2%;
+}
+
 .menuButton{
     background-color: #2c5364;
     height: 25px;
@@ -49,6 +64,7 @@ body{
     border-color: #2c5364;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
     transition: transform .15s;
+    margin-bottom: 2%;
 }
 
 #question-image:hover{
@@ -118,6 +134,7 @@ body{
 li{
     margin-right: 30px;
 }
+
 #timer {
     width: 40px;
     height: 20px;
