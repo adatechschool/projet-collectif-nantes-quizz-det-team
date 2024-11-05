@@ -3,6 +3,21 @@ body{
     text-align: center;
 }
 
+#traduire-en-français{
+float: right;
+background-color:#ffffff;
+    font-family: "Gill Sans", sans-serif;
+    color:#2c5364;
+    border-color: #2c5364
+}
+#traduire-en-anglais{
+float: right;
+background-color:#ffffff;
+    font-family: "Gill Sans", sans-serif;
+    color:#2c5364;
+    border-color: #2c5364
+}
+
 .menuButton{
     background-color: #2c5364;
     height: 25px;

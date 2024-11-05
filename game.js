@@ -9,6 +9,8 @@ const timerElement = document.getElementById("timer") // Sélectionne l'élémen
 const questionImage = document.querySelector("#question-image") //Image de la question
 const progressBar = document.querySelector("progress") //Barre de progression
 const menu = document.querySelector(".menu") //Section choix du theme
+const traduireEnFrançais= document.querySelector("#traduire-en-français")
+const tranduireEnEnglish=document.querySelector("#traduire-en-anglais")
 //-------------------------------------------------------
 
 let currentQuestionIndex; //index de la question actuelle
@@ -18,8 +20,9 @@ let reponseDuJoueur = "le joueur n'a pas jouer" // le joueur n'as pas choisi de 
 let score = 0 //le score
 let interval; //le timer
 let tempsRestant;//Temps initial en secondes
-
-function decrementerTemps() {
+ traduireEnFrançais.textContent="français"//affiché la page en français
+ tranduireEnEnglish.textContent="english" //affiché la page en english
+ function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
 //si le temps restant est = à 0 
