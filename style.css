@@ -117,3 +117,18 @@ body{
 li{
     margin-right: 30px;
 }
+#timer {
+    width: 40px;
+    height: 20px;
+    font-size: 20px;
+    color:#0b1012;
+    background-color:rgba(30, 202, 116, 0.773);
+    border-radius:40px;
+    display:flex;
+    list-style-type: none;
+    justify-self: center;
+    justify-content: center;
+    align-items:center ;
+    padding: 1%;
+    
+}

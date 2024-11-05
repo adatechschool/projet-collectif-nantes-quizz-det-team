@@ -23,7 +23,7 @@ function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
 //si le temps restant est = à 0 
-  if (tempsRestant === 0) {
+  if (tempsRestant <= 0) {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
     console.log("Le compte à rebours est terminé !")
@@ -93,6 +93,7 @@ function loadQuestion() { //charge une question
         answersBox.appendChild(button) //ajoute le bouton dans la section dédié
         
     })
+  
 }
 
 
