@@ -128,13 +128,13 @@ nextButton.addEventListener('click', ()=>{
         else{
             
             if(score==5){
-                questionBox.innerText = "Bravo, tu connais la culture française. " + score + "/5"
+                questionBox.innerText = translation[myLanguage].result_excellent + score + "/5"
             }
             else if(score<=2){
-                questionBox.innerText = "Tu as quelques lacunes en culture française mais continue tes efforts. " + score + "/5"
+                questionBox.innerText = translation[myLanguage].result_bad + score + "/5"
             }
             else{
-                questionBox.innerText = "Bravo, tu as un score de " + score + "/5"
+                questionBox.innerText = translation[myLanguage].result_mid + score + "/5"
             }
             answersBox.style.display = "none"
             nextButton.style.display = "none"
@@ -192,14 +192,19 @@ const translation = {
         next_button:"Suivant",
         replay_button:"Rejouer",
         welcome_paragraphe:"Bienvenue sur notre quizz sur la nourriture française.<br/> Vous trouverez ci-dessous une liste de thème divers pour tester vos connaissances en gastronomie francaise. <br/>Régalez vous !",
-        page_title:"QUIZZ SUR LA NOURRITURE FRANCAISE"
-
+        page_title:"QUIZZ SUR LA NOURRITURE FRANCAISE",
+        result_excellent:"Bravo, tu connais la culture française. ",
+        result_bad:"Tu as quelques lacunes en culture française mais continue tes efforts. ",
+        result_mid:"Bravo, tu as un score de ",
     },
     en:{
         next_button:"Next",
         replay_button:"Replay",
         welcome_paragraphe:"Welcome to our French food quiz.<br/> Below you will find a list of various themes to test your knowledge of French gastronomy. <br/>Enjoy!",
-        page_title:"QUIZZ ON FRENCH FOOD"
+        page_title:"QUIZZ ON FRENCH FOOD",
+        result_excellent:"Well done, you know French culture. ",
+        result_bad:"You have some gaps in French culture but continue your efforts. ",
+        result_mid:"Well done, you have a score of ",
     }
 }
 
@@ -209,5 +214,6 @@ function translate(language){
     welcomeParagraphe.innerHTML = translation[language].welcome_paragraphe
     pageTitle.innerText =  translation[language].page_title
 }
-translate("en")
+const myLanguage = "en"
+translate(myLanguage)
 initMenu()
