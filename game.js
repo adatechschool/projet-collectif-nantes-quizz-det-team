@@ -24,7 +24,7 @@ const tranduireEnEnglish=document.querySelector("#traduire-en-anglais")
 let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
 
-let reponseDuJoueur = "le joueur n'a pas jouer" // le joueur n'as pas choisi de réponse
+let reponseDuJoueur = "le joueur n'a pas joué" // le joueur n'as pas choisi de réponse
 let score = 0 //le score
 let interval; //le timer
 let tempsRestant;//Temps initial en secondes
@@ -38,9 +38,9 @@ timerElement.style.display = "none"
 progressBar.style.display = "none"
 
 
- traduireEnFrançais.textContent="français"//affiché la page en français
- tranduireEnEnglish.textContent="english" //affiché la page en english
- function decrementerTemps() {
+traduireEnFrançais.textContent="français"//affiché la page en français
+tranduireEnEnglish.textContent="english" //affiché la page en english
+function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
 //si le temps restant est = à 0 
@@ -85,7 +85,7 @@ function loadQuiz(quizName){ //charge un quiz choisit
 function loadQuestion() { //charge une question
     //remet des valeurs à 0 pour bien executer la question
     answersBox.innerHTML = ''
-    reponseDuJoueur = "le joueur n'a pas jouer"
+    reponseDuJoueur = "le joueur n'a pas joué"
     tempsRestant = 15 // initiale de timer à 30
     timerElement.textContent = tempsRestant
     clearInterval(interval)
@@ -106,7 +106,7 @@ function loadQuestion() { //charge une question
         button.addEventListener('click',()=>{ //permet de cliquer sur chaque bouton
             //change la couleur du bouton en fonction de la réponse
             clearInterval(interval)
-            if(reponseDuJoueur=="le joueur n'a pas jouer"){
+            if(reponseDuJoueur=="le joueur n'a pas joué"){
                 reponseDuJoueur = option
                 if(checkAnswer()){
                     button.style.backgroundColor = 'green'
@@ -124,7 +124,7 @@ function loadQuestion() { //charge une question
 
 
 nextButton.addEventListener('click', ()=>{
-    if(reponseDuJoueur!="le joueur n'a pas jouer"){
+    if(reponseDuJoueur!="le joueur n'a pas joué"){
         currentQuestionIndex ++ 
         progressBar.value += 1
         if(currentQuestionIndex<currentQuiz.length){
