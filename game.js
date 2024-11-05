@@ -16,6 +16,8 @@ const welcomeParagraphe = document.querySelector(".paragraphe-bienvenue")
 const pageTitle = document.querySelector("h1")
 //----------------------------------------------------
 
+let quizVersion = quiz_french_food
+
 let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
 
@@ -60,7 +62,7 @@ function loadQuiz(quizName){ //charge un quiz choisit
     replayButton.style.display = "none"
     timerElement.style.display = "block"
     //selectionne le quiz choisit
-    currentQuiz = quiz_nourriture_francaise[quizName]
+    currentQuiz = quizVersion[quizName]
     // if(quizName=="Alsace"){
     //     currentQuiz = quiz_nourriture_francaise.Alsace
     // }
@@ -172,7 +174,7 @@ function checkAnswer(){
 }
 
 function initMenu(){
-    for (const [nomDuTheme, value] of Object.entries(quiz_nourriture_francaise)) {   
+    for (const [nomDuTheme, value] of Object.entries(quizVersion)) {   
         const menuButton = document.createElement('button')
         menuButton.innerText = nomDuTheme
         menuButton.value = nomDuTheme
