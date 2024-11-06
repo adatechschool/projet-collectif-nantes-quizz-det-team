@@ -69,7 +69,7 @@ function loadQuiz(quizName){ //charge un quiz choisit
     questionBox.style.display = "block"
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
-    questionImage.style.display = "inline-block" 
+    questionImage.style.display = "block" 
     replayButton.style.display = "none"
     timerElement.style.display = "block"
     progressBar.style.display = "inline-block"
@@ -170,7 +170,7 @@ replayButton.addEventListener('click', () =>{
     progressBar.value = 0
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
-    questionImage.style.display = "inline-block"
+    questionImage.style.display = "block"
     replayButton.style.display = "none"
     timerElement.style.display = "block"
 
