@@ -41,6 +41,7 @@ progressBar.style.display = "none"
 
 traduireEnFrançais.textContent="français"//affiché la page en français
 tranduireEnEnglish.textContent="english" //affiché la page en english
+
 function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
