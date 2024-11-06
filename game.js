@@ -48,8 +48,8 @@ function decrementerTemps() {
   if (tempsRestant <= 0) {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
-    alert("le temps est terminé ");
-    reponseDuJoueur = "le temps est terminé" 
+    alert("Le temps est terminé ");
+    reponseDuJoueur = "Le temps est terminé" 
   }
 }
 
@@ -205,15 +205,17 @@ const translation = {
         result_excellent:"Bravo, tu connais la culture française. ",
         result_bad:"Tu as quelques lacunes en culture française mais continue tes efforts. ",
         result_mid:"Bravo, tu as un score de ",
+        alert_message:"Le temps est terminé.",
     },
     en:{
         next_button:"Next",
         replay_button:"Replay",
         welcome_paragraphe:"Welcome to our French food quiz.<br/> Below you will find a list of various themes to test your knowledge of French gastronomy. <br/>Enjoy!",
         page_title:"QUIZZ ON FRENCH FOOD",
-        result_excellent:"Well done, you know French culture. ",
-        result_bad:"You have some gaps in French culture but continue your efforts. ",
+        result_excellent:"Well done, you have good knowledge of French culture. ",
+        result_bad:"You have some weaknesses in French culture but keep on trying. ",
         result_mid:"Well done, you have a score of ",
+        alert_message:"Time has ran out.",
     }
 }
 
@@ -222,6 +224,7 @@ function translate(language){
     replayButton.innerText = translation[language].replay_button
     welcomeParagraphe.innerHTML = translation[language].welcome_paragraphe
     pageTitle.innerText =  translation[language].page_title
+    alert.innerText =  translation[language].alert_message
 }
 let myLanguage = "fr"
 initMenu()
