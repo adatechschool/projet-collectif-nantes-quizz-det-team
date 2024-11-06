@@ -39,9 +39,14 @@ timerElement.style.display = "none"
 progressBar.style.display = "none"
 
 
+<<<<<<< HEAD
 //traduireEnFrançais.textContent="français"//affiché la page en français
 //tranduireEnEnglish.textContent="english" //affiché la page en english
 
+=======
+traduireEnFrançais.textContent="français"//affiché la page en français
+tranduireEnEnglish.textContent="english" //affiché la page en english
+>>>>>>> 37a34a3548a9c24d7e6395c01d9da7474fd79c04
 function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
@@ -50,9 +55,15 @@ function decrementerTemps() {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
     alert(translation[myLanguage].alert_message);
+<<<<<<< HEAD
     reponseDuJoueur = "Le temps est terminé" 
     button.disabled = true
 }
+=======
+    reponseDuJoueur = "le temps est terminé"
+    button.disabled = true
+  }
+>>>>>>> 37a34a3548a9c24d7e6395c01d9da7474fd79c04
 }
 
 function loadQuiz(quizName){ //charge un quiz choisit
