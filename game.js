@@ -51,7 +51,8 @@ function decrementerTemps() {
     //on affiche dans la console Le compte à rebours est terminé
     alert(translation[myLanguage].alert_message);
     reponseDuJoueur = "Le temps est terminé" 
-  }
+    button.disabled = true
+}
 }
 
 function loadQuiz(quizName){ //charge un quiz choisit
@@ -111,11 +112,16 @@ function loadQuestion() { //charge une question
             clearInterval(interval)
             if(reponseDuJoueur=="le joueur n'a pas joué"){
                 reponseDuJoueur = option
+                for (const child of answersBox.children) {
+                    child.disabled  = true
+                }            
                 if(checkAnswer()){
                     button.style.backgroundColor = 'green'
+                    button.style.color = 'white'
                 }
                 else{
-                    button.style.borderColor = 'red'
+                    button.style.backgroundColor = 'red'
+                    button.style.color = 'white'
                 }
             }
         })

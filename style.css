@@ -107,25 +107,29 @@ body {
   border-color: #2c5364;
 }
 
-.options > * {
+.answer {
   background-color: rgb(255, 255, 255);
   height: 30px;
   width: 500px;
-  border-radius: 15px;
-  border: solid;
-  border-color: #ffffff;
   box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-  margin-bottom: 10px;
+  margin: 5px;
+  border-radius: 15px;
   letter-spacing: 0.5px;
   font-family: "Gill Sans", sans-serif;
   color: #2c5364;
   transition: all 0.1s;
-  float: left;
+  cursor: pointer;
 }
 
-.options > *:active {
-  transform: translate(0, 5px);
-  border-bottom: 1px solid;
+.answer:disabled{
+  background-color: rgb(180,180,180);
+  color: #ffffff;
+  cursor: no-drop;
+}
+
+.answer:hover:enabled{
+  transform: translate(0, -3px);
+  filter: brightness(90%);
 }
 
 .button-container > * {
