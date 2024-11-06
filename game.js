@@ -172,7 +172,7 @@ replayButton.addEventListener('click', () =>{
     nextButton.style.display = "inline-block"
     questionImage.style.display = "inline-block"
     replayButton.style.display = "none"
-    timerElement.style.display = "inline-block"
+    timerElement.style.display = "block"
 
 
     loadQuestion()
