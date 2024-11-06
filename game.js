@@ -23,6 +23,7 @@ let quizVersion = quiz_nourriture_francaise
 
 let currentQuestionIndex; //index de la question actuelle
 let currentQuiz; //array : le quiz actuel
+let currentQuizTheme = "Global"
 
 let reponseDuJoueur = "le joueur n'a pas joué" // le joueur n'as pas choisi de réponse
 let score = 0 //le score
@@ -187,6 +188,7 @@ function initMenu(){
         menuButton.value = nomDuTheme
         menuButton.classList.add('menuButton')
         menuButton.addEventListener("click", ()=>{
+            currentQuizTheme = menuButton.value
             loadQuiz(menuButton.value)
         })
         menu.appendChild(menuButton)
@@ -228,12 +230,14 @@ traduireEnFrançais.addEventListener('click',()=>{
     myLanguage = "fr"
     translate(myLanguage)
     quizVersion = quiz_nourriture_francaise
-    // loadQuiz()
+    currentQuiz = quizVersion[currentQuizTheme]
+    loadQuestion()
 })
 
 tranduireEnEnglish.addEventListener('click',()=>{
     myLanguage = "en"
     translate(myLanguage)
     quizVersion = quiz_french_food
-    // loadQuiz()
+    currentQuiz = quizVersion[currentQuizTheme]
+    loadQuestion()
 })
