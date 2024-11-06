@@ -51,7 +51,9 @@ function decrementerTemps() {
     //on affiche dans la console Le compte à rebours est terminé
     alert(translation[myLanguage].alert_message);
     reponseDuJoueur = "Le temps est terminé" 
-    button.disabled = true
+    for (const child of answersBox.children) {
+        child.disabled  = true
+    }            
 }
 }
 
