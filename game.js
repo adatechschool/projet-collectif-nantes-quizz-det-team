@@ -39,8 +39,8 @@ timerElement.style.display = "none"
 progressBar.style.display = "none"
 
 
-traduireEnFrançais.textContent="français"//affiché la page en français
-tranduireEnEnglish.textContent="english" //affiché la page en english
+//traduireEnFrançais.textContent="français"//affiché la page en français
+//tranduireEnEnglish.textContent="english" //affiché la page en english
 
 function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
