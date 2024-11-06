@@ -26,17 +26,19 @@ body {
 #traduire-en-français {
   float: right;
   background-color: #ffffff;
-  font-family: "Gill Sans", sans-serif;
-  color: #2c5364;
-  border-color: #2c5364;
+}
+
+#traduire-en-français:active {
+  transform: translate(0, 5px);
 }
 
 #traduire-en-anglais {
   float: right;
-  background-color: #ffffff;
-  font-family: "Gill Sans", sans-serif;
-  color: #2c5364;
-  border-color: #2c5364;
+  background-color: #ffffff; 
+}
+
+#traduire-en-anglais:active {
+  transform: translate(0, 5px);
 }
 
 .menuButton {
