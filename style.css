@@ -26,6 +26,7 @@ body {
 #traduire-en-français {
   float: right;
   background-color: #ffffff;
+  cursor: pointer;
 }
 
 #traduire-en-français:active {
@@ -35,6 +36,7 @@ body {
 #traduire-en-anglais {
   float: right;
   background-color: #ffffff; 
+  cursor: pointer;
 }
 
 #traduire-en-anglais:active {
@@ -52,6 +54,7 @@ body {
   font-family: "Gill Sans", sans-serif;
   color: #ffffff;
   margin-right: 30px;
+  cursor: pointer;
 }
 
 .menuButton > * {
@@ -151,6 +154,7 @@ body {
   letter-spacing: 0.5px;
   font-family: "Gill Sans", sans-serif;
   color: #ffffff;
+  cursor: pointer;
 }
 
 .button-container:active {
