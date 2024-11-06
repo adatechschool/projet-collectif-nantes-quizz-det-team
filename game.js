@@ -69,7 +69,7 @@ function loadQuiz(quizName){ //charge un quiz choisit
     questionImage.style.display = "inline-block" 
     replayButton.style.display = "none"
     timerElement.style.display = "block"
-    progressBar.style.display = "block"
+    progressBar.style.display = "inline-block"
     //selectionne le quiz choisit
     currentQuiz = quizVersion[quizName]
     // if(quizName=="Alsace"){
