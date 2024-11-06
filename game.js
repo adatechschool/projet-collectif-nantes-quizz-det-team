@@ -49,7 +49,8 @@ function decrementerTemps() {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
     alert("le temps est terminé ");
-    reponseDuJoueur = "le temps est terminé" 
+    reponseDuJoueur = "le temps est terminé"
+    button.disabled = true
   }
 }
 
@@ -110,11 +111,16 @@ function loadQuestion() { //charge une question
             clearInterval(interval)
             if(reponseDuJoueur=="le joueur n'a pas joué"){
                 reponseDuJoueur = option
+                for (const child of answersBox.children) {
+                    child.disabled  = true
+                }            
                 if(checkAnswer()){
                     button.style.backgroundColor = 'green'
+                    button.style.color = 'white'
                 }
                 else{
-                    button.style.borderColor = 'red'
+                    button.style.backgroundColor = 'red'
+                    button.style.color = 'white'
                 }
             }
         })
