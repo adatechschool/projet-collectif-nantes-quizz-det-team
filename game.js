@@ -41,6 +41,7 @@ progressBar.style.display = "none"
 
 traduireEnFrançais.textContent="français"//affiché la page en français
 tranduireEnEnglish.textContent="english" //affiché la page en english
+
 function decrementerTemps() {
   tempsRestant-- // On décrémente le temps restant -1 à chaque segonde
   timerElement.textContent = tempsRestant// On affiche le temps restant à l'écran page web
@@ -48,7 +49,7 @@ function decrementerTemps() {
   if (tempsRestant <= 0) {
     clearInterval(interval)//annule l'action répétitive temporisée
     //on affiche dans la console Le compte à rebours est terminé
-    alert("Le temps est terminé ");
+    alert(translation[myLanguage].alert_message);
     reponseDuJoueur = "Le temps est terminé" 
   }
 }
