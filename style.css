@@ -87,6 +87,13 @@ body {
   margin-bottom: 2%;
 }
 
+.image-container {
+  width: 300px;
+  height: 300px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
 #question-image:hover {
   -ms-transform: scale(1.5); /* IE 9 */
   -webkit-transform: scale(1.5); /* Safari 3-8 */
