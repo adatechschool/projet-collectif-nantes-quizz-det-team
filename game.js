@@ -9,7 +9,8 @@ const answersBox = document.querySelector('.options') //Section des réponses
 const nextButton = document.querySelector("#next-button") //Bouton suivant
 const replayButton = document.querySelector("#replay-button") //Bouton rejouer
 const timerElement = document.getElementById("timer") // Sélectionne l'élément HTML où le temps sera affiché
-const questionImage = document.querySelector(".image-container") //Image de la question
+const imageContainer = document.querySelector(".image-container")
+const questionImage = document.querySelector("#question-image") //Image de la question
 const progressBar = document.querySelector("progress") //Barre de progression
 const menu = document.querySelector(".menu") //Section choix du theme
 const welcomeParagraphe = document.querySelector(".paragraphe-bienvenue")
@@ -34,6 +35,7 @@ questionBox.style.display = "none"
 answersBox.style.display = "none"
 nextButton.style.display = "none"
 questionImage.style.display = "none" 
+imageContainer.style.display = "none"
 replayButton.style.display = "none"
 timerElement.style.display = "none"
 progressBar.style.display = "none"
@@ -62,14 +64,15 @@ function loadQuiz(quizName){ //charge un quiz choisit
     currentQuestionIndex = 0
     score = 0
     progressBar.value = 0
-    //affiche le squelette du quizz
+    //affiche le squelette du quiz
 
     bienvenueImage.style.display = "none"
     bienvenueMessage.style.display = "none"
     questionBox.style.display = "block"
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
-    questionImage.style.display = "block" 
+    questionImage.style.display = "block"
+    imageContainer.style.display = "block" 
     replayButton.style.display = "none"
     timerElement.style.display = "block"
     progressBar.style.display = "inline-block"
@@ -156,6 +159,7 @@ nextButton.addEventListener('click', ()=>{
             answersBox.style.display = "none"
             nextButton.style.display = "none"
             questionImage.style.display = "none"
+            imageContainer.style.display = "none"
             replayButton.style.display = "inline-block"
             timerElement.style.display = "none"
         }
@@ -171,6 +175,7 @@ replayButton.addEventListener('click', () =>{
     answersBox.style.display = "inline-block"
     nextButton.style.display = "inline-block"
     questionImage.style.display = "block"
+    imageContainer.style.display = "block"
     replayButton.style.display = "none"
     timerElement.style.display = "block"
 
@@ -209,8 +214,8 @@ const translation = {
     fr:{
         next_button:"Suivant",
         replay_button:"Rejouer",
-        welcome_paragraphe:"Bienvenue sur notre quizz sur la nourriture française.<br/> Vous trouverez ci-dessous une liste de thème divers pour tester vos connaissances en gastronomie francaise. <br/>Régalez vous !",
-        page_title:"QUIZZ SUR LA NOURRITURE FRANCAISE",
+        welcome_paragraphe:"Bienvenue sur notre quiz sur la nourriture française.<br/> Vous trouverez ci-dessous une liste de thème divers pour tester vos connaissances en gastronomie francaise. <br/>Régalez vous !",
+        page_title:"QUIZ SUR LA NOURRITURE FRANCAISE",
         result_excellent:"Bravo, tu connais la culture française. ",
         result_bad:"Tu as quelques lacunes en culture française mais continue tes efforts. ",
         result_mid:"Bravo, tu as un score de ",
@@ -220,7 +225,7 @@ const translation = {
         next_button:"Next",
         replay_button:"Replay",
         welcome_paragraphe:"Welcome to our French food quiz.<br/> Below you will find a list of various themes to test your knowledge of French gastronomy. <br/>Enjoy!",
-        page_title:"QUIZZ ON FRENCH FOOD",
+        page_title:"QUIZ ON FRENCH FOOD",
         result_excellent:"Well done, you have good knowledge of French culture. ",
         result_bad:"You have some weaknesses in French culture but keep on trying. ",
         result_mid:"Well done, you have a score of ",
